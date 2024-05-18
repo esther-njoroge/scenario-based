@@ -26,38 +26,99 @@ console.log(app.gainFollowers("user3"));
 
 
 // Develop a system for scheduling appointments at a healthcare facility. Consider factors like doctor availability, patient preferences, and appointment reminders.
-class scheduleAppointment {
-    constructor(doctorsDetails,patientsDetails,appointmentDate) {
-        this.doctorsDetails=[];
-        this.patientsDetails =[];
-         this.appointmentDate= appointmentDate;
-       }
-       addPatientDetails(name, age, condition, preferences){
-        const patientDetails= {
-            name: name,
-            age: age,
-            condition: condition,
-            preferences: preferences
+// class scheduleAppointment {
+//     constructor(patientsDetails,doctorsDetails,appointDate) {
+//         this.doctorsDetails=[];
+//         this.patientsDetails =[];
+//          this.appointDate= appointDate;
+//        }
+//        addPatientDetails(name, age, condition, preferences){
+//         const patientDetails= {
+//             name: name,
+//             age: age,
+//             condition: condition,
+//             preferences: preferences
+//         }
+//         this.patientsDetails.push(patientDetails)
+//        }
+//        addDoctors(name, skills, available=true){
+//         const doctordetails = {
+//             name: name,
+//             skills: skills
+//         }
+//         this.addDoctors(name,this.appointDate,time,skills)
+//         time: time
+//         if(this.appointDate.includes(time)){
+//             console.log(`${patientDetails.name} is to consult ${doctorDetails.name} on ${this.appointDate}`)
+//         }
+//         else{
+//             console.log(`Doctor not available`);
+//         }
+
+               
+    //     this.doctorsDetails.push(doctordetails)
+    //     this.doctorsDetails.available.forEach(item => {
+    //         if (doctorsDetails.available == true){
+    //             console.log(`${patientDetails.name} is to consult ${doctorDetails.name} on ${this.appointDate}`)
+    //         }
+    //         else{
+    //             console.log("Doctor is not available at the moment")
+    //         }
+    //     });
+    //    }
+    // }
+    // const book = new scheduleAppointment()
+    // book.addPatientDetails("David joe",23, "Breathing difficulties", )
+    // book.addDoctors("Doctor Agnes", "General Doctor", "Tuesday 9:30am")
+    // console.log(book)
+
+
+
+    class DisasterRecovery{
+        constructor() {
+            this.situations = {};
         }
-        this.patientsDetails.push(patientDetails)
-       }
-       addDoctors(name, skills, available=true){
-        const doctordetails = {
-            name: name,
-            skills: skills
+        addSituation(location, situation) {
+            if (!this.situations[location]) {
+                this.situations[location] = [];
+            }
+            this.situations[location].push(situation);
         }
-        this.doctorsDetails.push(doctordetails)
-        this.doctorsDetails.available.forEach(item => {
-            if (doctorsDetails.available == true){
-                console.log(`${patientDetails.name} is to consult ${doctorDetails.name} on ${this.appointmentDate}`)
-            }
-            else{
-                console.log("Doctor is not available")
-            }
-        });
-       }
+        attendToSituation(location) {
+            return this.situations[location];
+        }
     }
-    const schedule = new Appointment()
-    schedule.addPatientDetails("David joe",23, "Breathing difficulties", )
-    schedule.addDoctors("Doctor Agnes", "General Doctor")
-    console.log(schedule)
+
+    const disaster = new DisasterRecovery();
+    disaster.addSituation("Nairobi", "Flood");
+    disaster.addSituation("Marsabit", " Drought");
+    console.log(disaster.attendToSituation("Nairobi"));
+    console.log(disaster.attendToSituation("Marsabit")); 
+    console.log()
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
